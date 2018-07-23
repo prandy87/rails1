@@ -19,4 +19,8 @@ class GossipProjectApp < Sinatra::Base
 		redirect '/'                                   #will redirect after to 'home'
 		
 	end
+	
+	get '/gossips/:id' do
+		erb :gossip, locals: {gossip: Gossip.find(params['id'])}
+	end
 end

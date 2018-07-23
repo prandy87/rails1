@@ -5,13 +5,13 @@
   <body>
     <h1>Mon super site de gossip, du dossier views !</h1>
     <p>Bienvenue. Les potins arrivent asap... En attendant, tu peux <a href="/gossips/new">creer des potins.</a> </p> 
-    <% gossips.each do |gossip| %>
-        <p>
-          <%= gossip.author %><br/>
-          <%= gossip.content %>
-        </p>
-      <% end %>
-    
+    <% gossips.each_with_index do |gossip, index| %>
+      <p>
+        <%= gossip.author %><br/>
+        <%= gossip.content %>
+        <a href="/gossips/<%= index %>"><button> Voir le gossip</button></a>
+      </p>
+    <% end %>
 
     
   </body>
